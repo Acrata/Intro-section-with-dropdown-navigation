@@ -8,8 +8,25 @@ const ClientsContainer = styled.section`
   position: relative;
   z-index: -2;
   .client {
+    margin-block-start: auto;
+    flex: 1 0 10%;
     img {
       width: 90%;
+    }
+  }
+  @media only screen and (min-width: 1200px){
+    /* margin-block-start: auto;
+    margin:0; */
+    padding:0;
+    margin:0;
+    margin-block-start: auto;
+    max-width:70%;
+    display: flex;
+    z-index: 9;
+    .client {
+      img {
+        width: 100px;
+      }
     }
   }
 `

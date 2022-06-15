@@ -13,6 +13,7 @@ ${normalize}
   --margin: 1em;
 }
   body { 
+    font-size: 15px;
     font-family: "Epilogue", sans-serif;
     color: var(--grey);
   }
@@ -33,6 +34,9 @@ ${normalize}
   }
   li {
     list-style: none;
+  }
+  img {
+    /* width: 100%; */
   }
 `
 

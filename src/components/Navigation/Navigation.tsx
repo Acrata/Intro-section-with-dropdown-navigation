@@ -21,6 +21,10 @@ const NavigationContainer = styled.div<INavigationContainer>`
   flex-direction: column;
   opacity: 0;
   transition: transform .6s ease-in-out, opacity .6s ease-in .800ms;
+      li a {
+        text-decoration: none;
+        color: inherit;
+      }
   nav {
     display: flex;
     flex-direction: column;
@@ -37,10 +41,9 @@ const NavigationContainer = styled.div<INavigationContainer>`
       li {
         display: flex;
         gap: var(--margin-sm);
-      }
-      li a {
-        text-decoration: none;
-        color: inherit;
+        &:hover {
+          color: var(--black);
+        }
       }
     }
   }
@@ -57,13 +60,14 @@ const NavigationContainer = styled.div<INavigationContainer>`
     right:var(--margin);
     cursor: pointer;
   }
-
+  
   .parent-item {
     display: flex;
     align-items: center;
     gap: var(--margin);
     position: relative;
     width: 100%;
+    max-width: 200px;
     &[data-state='closed']:after {
       background: url('./images/icon-arrow-down.svg');
       background-repeat: no-repeat;
@@ -77,17 +81,20 @@ const NavigationContainer = styled.div<INavigationContainer>`
       position: absolute;
       inset: 35% 0 0 50%;
     }
+    &:hover {
+      color: var(--black);
+    }
   }
   .login-btn {
     margin-block-start: 25%;
   }
   .register-btn {
-    margin-block-start: var(--margin);
-    margin-block-end: 25%;
     border: 1px solid var(--black);
     padding-block: var(--margin-sm);
     margin-inline: var(--margin);
     border-radius: var(--margin);
+    width: 50%;
+    margin: var(--margin) auto;
   }
   &.is-active {
     transform: translateX(0%);
@@ -114,6 +121,8 @@ const Navigation = ({active , menuToggle}:INavigation): JSX.Element => {
           <NavigationMenu.Item>
             <NavigationMenu.Trigger className='parent-item'>
               Features
+              <img className='icon-down' src='./images/icon-arrow-down.svg' alt='icon' />
+              <img className='icon-up' src='./images/icon-arrow-up.svg' alt='icon' />
             </NavigationMenu.Trigger>
             <NavigationMenu.Content>
               <NavigationMenu.List>
@@ -138,24 +147,32 @@ const Navigation = ({active , menuToggle}:INavigation): JSX.Element => {
           <NavigationMenu.Item>
             <NavigationMenu.Trigger className='parent-item'>
               Company
+              <img className='icon-down' src='./images/icon-arrow-down.svg' alt='icon' />
+              <img className='icon-up' src='./images/icon-arrow-up.svg' alt='icon' />
             </NavigationMenu.Trigger>
             <NavigationMenu.Content>
-              <ul>
-                <li>History</li>
-                <li>Our Team</li>
-                <li>Blog</li>
-              </ul>
+              <NavigationMenu.List className='nav-nested'>
+                <NavigationMenu.Item>
+                  <a href='#'>History</a>
+                </NavigationMenu.Item>
+                <NavigationMenu.Item>
+                  <a href='#'>Our Team</a>
+                </NavigationMenu.Item>
+                <NavigationMenu.Item>
+                  <a href='#'>Blog</a>
+                </NavigationMenu.Item>
+              </NavigationMenu.List>
             </NavigationMenu.Content>
           </NavigationMenu.Item>
         </NavigationMenu.List>
         <NavigationMenu.List>
           <NavigationMenu.Item>
-            Carrers
+            <a href="#">Carrers</a>
           </NavigationMenu.Item>
         </NavigationMenu.List>
         <NavigationMenu.List>
           <NavigationMenu.Item>
-            Blog
+            <a href="#">Blog</a>
           </NavigationMenu.Item>
         </NavigationMenu.List>
       </NavigationMenu.Root>

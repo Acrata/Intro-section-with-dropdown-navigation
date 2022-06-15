@@ -11,7 +11,11 @@ const HeroContainer = styled.div`
 const Hero = (): JSX.Element => {
   return (
     <HeroContainer>
-      <img src='./images/image-hero-mobile.png' alt='Hero image' />
+      <img
+        srcSet='./images/image-hero-mobile.png 1000w,
+      ./images/image-hero-desktop.png 1200w'
+        src='./images/image-hero-desktop.png'
+        alt='Hero image' />
     </HeroContainer>
   )
 }
