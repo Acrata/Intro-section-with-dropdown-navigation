@@ -4,8 +4,11 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "test": "vitest",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint:css": "stylelint './src/**/*.tsx'",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@fontsource/epilogue": "^4.5.8",
@@ -19,6 +22,9 @@
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.2.1",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
@@ -26,19 +32,26 @@
     "@vitejs/plugin-react": "^1.3.0",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-styled-components": "^2.0.7",
+    "c8": "^7.11.3",
     "eslint": "^8.0.1",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.30.0",
+    "extend-expect": "link:@testing-library/jest-dom/extend-expect",
+    "jsdom": "^20.0.0",
     "react-error-overlay": "^6.0.11",
     "styled-normalize": "^8.0.7",
+    "stylelint": "^14.9.1",
+    "stylelint-config-recommended": "^8.0.0",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0",
     "ts-standard": "^11.0.0",
     "typescript": "^4.6.3",
-    "vite": "^2.9.9"
-  },
-  "babel": {
-    "plugins": ["babel-plugin-styled-components"]
+    "vite": "^2.9.9",
+    "vite-plugin-babel-macros": "^1.0.6",
+    "vitest": "^0.15.2"
   }
 }

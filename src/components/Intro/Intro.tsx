@@ -2,47 +2,30 @@ import Header from '../Header'
 import Hero from '../Hero'
 import HeroCTA from '../HeroCTA'
 import Clients from '../Clients'
-import styled from 'styled-components'
+import Main from './Introstyles'
 
-const Container = styled.div`
-  max-width: 1440px;
-  margin: 0 auto;
-  @media only screen and (min-width: 1200px){
-    margin-block-start: calc(var(--margin) * 5);
-    display: flex;
-    gap: 3em; 
-    padding-inline: calc(var(--margin) * 3);
+const heroCTAData: IHeroCTA = {
+  title: 'Make remote work',
+  content: 'Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.',
+  buttonText: 'Learn more',
+  image: {
+    src: './images/image-hero-desktop.png',
+    srcSet: ['./images/image-hero-mobile.png', './images/image-hero-desktop.png'],
+    alt: 'FrontMentor challenge hero image'
   }
-  .hero-img, .hero-content {
-    flex: 0 50%;
-  }
-  .hero-content {
-    flex:1;
-    order: 0;
-    padding-bottom: 0;
-    display: flex;
-    flex-direction: column;
-    margin-block-start: calc(var(--margin)* 3);
-  }
-  .hero-img {
-    flex: 0 1 35%;
-    order:1;
-  }
-`
-
+}
 const Intro = (): JSX.Element => {
+  const { title, content, buttonText, image } = heroCTAData
   return (
     <>
       <Header />
-      <Container>
-        <div className='hero-img'>
-          <Hero />
-        </div>
+      <Main>
+        <Hero imgAttrs={image} />
         <div className='hero-content'>
-          <HeroCTA />
+          <HeroCTA title={title} content={content} buttonText={buttonText} />
           <Clients />
         </div>
-      </Container>
+      </Main>
     </>
   )
 }

@@ -1,14 +1,14 @@
 import Intro from './Intro'
 import '@testing-library/jest-dom/extend-expect'
 import { render, screen } from "@testing-library/react";
-import { test } from "vitest";
+import { test, describe } from "vitest";
 
 beforeEach(() => {
     render(<Intro />)
 })
 
-describe('<Intro />', async () => {
+describe.only('<Intro />', async () => {
     test('test something', () => {
-        expect(screen.getByText(/Intro/)).toBeInTheDocument()
+        expect(screen.getByText(/Blog/)).toBeInTheDocument()
     })
 })

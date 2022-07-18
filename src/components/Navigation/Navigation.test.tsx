@@ -1,14 +1,14 @@
 import Navigation from './Navigation'
 import '@testing-library/jest-dom/extend-expect'
 import { render, screen } from "@testing-library/react";
-import { test } from "vitest";
+import { test, describe, expect, beforeEach } from "vitest";
 
 beforeEach(() => {
-    render(<Navigation />)
+  render(<Navigation menuToggle={() => { return }} active={false} />)
 })
 
 describe('<Navigation />', async () => {
-    test('test something', () => {
-        expect(screen.getByText(/Navigation/)).toBeInTheDocument()
-    })
+  test('test something', () => {
+    expect(screen.getByText(/Features/)).toBeInTheDocument()
+  })
 })

@@ -1,21 +1,25 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 const HeroContainer = styled.div`
   position: relative;
   z-index: -2;
+  margin-block-start: calc(var(--margin) * 2);
   img {
     width:100%;
   }
 `
 
-const Hero = (): JSX.Element => {
+const Hero = ({ imgAttrs }: IHeroImgAttrs): JSX.Element => {
+  const { src, srcSet, alt } = imgAttrs
+  // console.log({imgAttrs : {src}} =props, 'PP');
   return (
-    <HeroContainer>
+    <HeroContainer className='hero-img'>
       <img
-        srcSet='./images/image-hero-mobile.png 1000w,
-      ./images/image-hero-desktop.png 1200w'
-        src='./images/image-hero-desktop.png'
-        alt='Hero image' />
+        srcSet={`${srcSet[0] as string} 1000w,
+      ${srcSet[1] as string} 1200w`}
+        src={src}
+        alt={alt}
+      />
     </HeroContainer>
   )
 }

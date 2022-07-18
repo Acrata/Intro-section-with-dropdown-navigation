@@ -1,14 +1,22 @@
 import Header from './Header'
 import '@testing-library/jest-dom/extend-expect'
-import { render, screen } from "@testing-library/react";
-import { test } from "vitest";
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { test, describe, expect, beforeEach } from 'vitest'
 
-beforeEach(() => {
-    render(<Header />)
-})
+const user = userEvent.setup()
+// const handleClick = jest.fn();
+// beforeEach(() => {
+// })
 
 describe('<Header />', async () => {
-    test('test something', () => {
-        expect(screen.getByText(/Header/)).toBeInTheDocument()
-    })
+  const { container } = render(<Header />)
+  test('Test Menu and logo', async () => {
+    expect(screen.getByText(/Company/)).toBeInTheDocument()
+    expect(screen.getByRole(/img/)).toBeInTheDocument()
+    expect(screen.getByText(/Features/)).toBeInTheDocument()
+    // await user.click(screen.getByTestId('menu-icon'))
+    // await expect(container.getElementsByClassName('is-active').length).toBe(1)
+    // expect(handleClick).toBeCalledTimes(1)
+  })
 })

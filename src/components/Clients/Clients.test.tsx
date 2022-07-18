@@ -1,14 +1,13 @@
 import Clients from './Clients'
-import '@testing-library/jest-dom/extend-expect'
-import { render, screen } from "@testing-library/react";
-import { test } from "vitest";
+import { render, screen } from '@testing-library/react'
+import { test, expect, describe, beforeEach } from 'vitest'
 
 beforeEach(() => {
-    render(<Sponsors />)
+  render(<Clients />)
 })
 
-describe('<Sponsors />', async () => {
-    test('test something', () => {
-        expect(screen.getByText(/Sponsors/)).toBeInTheDocument()
-    })
+describe.only('<Clients />', async () => {
+  test('test something', () => {
+    expect(screen.getByAltText(/logo/)).toBeInTheDocument()
+  })
 })

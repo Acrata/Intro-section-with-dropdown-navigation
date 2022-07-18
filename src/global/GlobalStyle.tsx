@@ -12,6 +12,10 @@ ${normalize}
   --margin-sm: .5em;
   --margin: 1em;
 }
+::selection {
+  color: var(--white);
+  background: var(--black);
+}
   body { 
     font-size: 15px;
     font-family: "Epilogue", sans-serif;
