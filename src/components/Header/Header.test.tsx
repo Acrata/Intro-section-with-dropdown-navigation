@@ -12,9 +12,9 @@ const user = userEvent.setup()
 describe('<Header />', async () => {
   const { container } = render(<Header />)
   test('Test Menu and logo', async () => {
-    expect(screen.getByText(/Company/)).toBeInTheDocument()
-    expect(screen.getByRole(/img/)).toBeInTheDocument()
-    expect(screen.getByText(/Features/)).toBeInTheDocument()
+    expect(screen.getByText(/Company/)).toBeTruthy()
+    expect(screen.getByRole(/img/)).toBeTruthy()
+    expect(screen.getByText(/Features/)).toBeTruthy()
     // await user.click(screen.getByTestId('menu-icon'))
     // await expect(container.getElementsByClassName('is-active').length).toBe(1)
     // expect(handleClick).toBeCalledTimes(1)

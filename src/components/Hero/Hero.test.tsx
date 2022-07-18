@@ -1,7 +1,7 @@
 import Hero from './Hero'
 import '@testing-library/jest-dom/extend-expect'
-import { render, screen } from "@testing-library/react";
-import { test, descriibe, expect, beforeEach } from "vitest";
+import { render, screen } from '@testing-library/react'
+import { test, expect, beforeEach, describe } from 'vitest'
 
 const image = {
   src: './images/image-hero-desktop.png',
@@ -14,6 +14,6 @@ beforeEach(() => {
 
 describe('<Hero />', async () => {
   test('test something', () => {
-    expect(screen.getByAltText(image.alt)).toBeInTheDocument()
+    expect(screen.getByAltText(image.alt)).toBeTruthy()
   })
 })

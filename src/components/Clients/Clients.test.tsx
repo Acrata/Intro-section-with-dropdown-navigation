@@ -8,6 +8,6 @@ beforeEach(() => {
 
 describe.only('<Clients />', async () => {
   test('test something', () => {
-    expect(screen.getByAltText(/logo/)).toBeInTheDocument()
+    expect(screen.getByAltText(/logo/)).toBeTruthy()
   })
 })

@@ -8,9 +8,14 @@ const HeroContainer = styled.div`
     width:100%;
   }
 `
-
+interface IHero {
+  src: string
+  srcSet: string[]
+  alt: string
+}
 const Hero = ({ imgAttrs }: IHeroImgAttrs): JSX.Element => {
   const { src, srcSet, alt } = imgAttrs
+  console.log(imgAttrs)
   // console.log({imgAttrs : {src}} =props, 'PP');
   return (
     <HeroContainer className='hero-img'>
