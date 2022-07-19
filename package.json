@@ -37,7 +37,7 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.30.0",
-    "extend-expect": "link:@testing-library/jest-dom/extend-expect",
+    "extend-expect": "file:@testing-library/jest-dom/extend-expect",
     "jsdom": "^20.0.0",
     "react-error-overlay": "^6.0.11",
     "styled-normalize": "^8.0.7",
